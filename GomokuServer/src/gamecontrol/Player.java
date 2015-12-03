@@ -14,14 +14,12 @@ public class Player {
     /* ATTRIBUTE */
     int id;
     String nickname;
-    int roomId;
     int symbolId;
 
     /* CONSTRUCTOR */
-    public Player(int Id, String nickname, int roomId, int symbolId){
+    public Player(int Id, String nickname, int symbolId){
         this.setId(Id);
         this.setNickname(nickname);
-        this.setRoomId(roomId);
         this.setSymbolId(symbolId);
     }
 
@@ -32,10 +30,6 @@ public class Player {
 
     public String getNickname(){
         return this.nickname;
-    }
-
-    public int getRoomId(){
-        return this.roomId;
     }
 
     public int getSymbolId(){
@@ -50,11 +44,7 @@ public class Player {
     public void setNickname(String nickname){
         this.nickname = nickname;
     }
-
-    public void setRoomId(int roomId){
-        this.roomId = roomId;
-    }
-
+    
     public void setSymbolId(int symbolId){
         this.symbolId = symbolId;
     }
