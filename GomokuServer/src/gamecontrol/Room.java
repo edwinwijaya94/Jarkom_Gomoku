@@ -5,23 +5,25 @@
  */
 package gamecontrol;
 
+import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
  *
  * @author Edwin
  */
-public class Room {
+public class Room implements Runnable {
     /* ATTRIBUTE */
     int id;
-    ArrayList<Player> playerList;
+    ArrayList<Player> playerList = new ArrayList<Player>();
     Game game;
     
     /* CONSTRUCTOR */
-    public Room(Player creator){
-        playerList = new ArrayList<>();
-        this.addPlayer(creator);
+    public Room(int roomId){
+        this.id = roomId;
         game = new Game();
     }
     
@@ -73,6 +75,52 @@ public class Room {
     
     public boolean isEmpty(){
         return this.getTotalPlayer() == 0;
+    }
+
+    @Override
+    public void run() {
+        
+        while(getTotalPlayer() < 2){
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        // Initialize game
+        for(int i = 0; i<playerList.size() ; i++){
+            playerList.get(i).setId(i);
+            game.addPlayer(playerList.get(i));
+        }
+        
+        game.start(game.getPlayerList());
+        System.out.println("Game Started");
+        for(int i = 0; i<playerList.size(); i++){
+            try {
+                playerList.get(i).setGame(game);
+                playerList.get(i).sendMessage("Game Started");
+            } catch (IOException ex) {
+                Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        while(game.getStatus() != 2){
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        for(int i = 0; i< playerList.size(); i++){
+            try {
+                playerList.get(i).sendMessage("Game Ended");
+            } catch (IOException ex) {
+                Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }
     
 }
