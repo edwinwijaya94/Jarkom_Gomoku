@@ -15,6 +15,9 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -33,7 +36,7 @@ import javafx.stage.Stage;
  *
  * @author Vicko
  */
-public class FXMLDocumentStartController implements Initializable {
+public class FXMLDocumentStartController implements Initializable{
 
     @FXML
     private TextField nicknameField;
@@ -48,6 +51,14 @@ public class FXMLDocumentStartController implements Initializable {
     @FXML
     private TextField ipAddress;
     
+    private class GameStarted implements Runnable {
+
+        @Override
+        public void run() {
+            
+        }
+    
+    }
 
     /**
      * Initializes the controller class.
@@ -130,20 +141,62 @@ public class FXMLDocumentStartController implements Initializable {
             stage.show();
             
             str.set("");
-            
+            System.out.println("ROOM");
             try {
                 in = new DataInputStream(socket.getInputStream());
             } catch (IOException ex) {
                 Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            while(!str.get().equals("Game Started")){
-                try {
-                    str.set(in.readUTF());
-                    System.out.println(str.get());
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
+//            GameStarted gameStarted = new GameStarted();
+//            new Thread(gameStarted).start();
+            
+            Task task = new Task<Void>() {
+                @Override
+                public Void call() {
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    
+                    while(!str.get().equals("Game Started")){
+                        try {
+                            str.set(in.readUTF());
+                            System.out.println(str.get());
+                        } catch (IOException ex) {
+                            Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    System.out.println("keluar");
+                    
+                    return null;
                 }
-            }
+            };
+            
+            task.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+                @Override
+                public void handle(WorkerStateEvent t) {
+                    try {
+                        Stage stage = new Stage(); 
+                        Parent root;
+                        Stage curstage=(Stage) nicknameButton.getScene().getWindow();
+                        curstage.hide();
+                        root = FXMLLoader.load(getClass().getResource("FXMLDocumentGame.fxml"));
+
+                        stage.setTitle("Playing");
+                        stage.initModality(Modality.WINDOW_MODAL);
+                        stage.initOwner((Stage) nicknameField.getScene().getWindow());
+
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException ex) {
+                        Logger.getLogger(FXMLDocumentStartController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            });
+            new Thread(task).start();
+            
         }
     }
     
