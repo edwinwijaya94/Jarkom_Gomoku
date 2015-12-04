@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="224.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gomokugui.FXMLDocumentChooseCharController">
+  <children>
+      <VBox alignment="TOP_CENTER" prefHeight="183.0" prefWidth="433.0" spacing="30.0">
+         <children>
+            <Label text="Choose A Character">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Group fx:id="tggroup">
+                     <children>
+                        <ToggleButton fx:id="tb1" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tg" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="tb2" layoutX="42.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb3" layoutX="84.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb4" layoutX="126.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb5" layoutX="168.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb6" layoutX="210.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb7" layoutX="252.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb8" layoutX="294.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb9" layoutX="336.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                        <ToggleButton fx:id="tb10" layoutX="378.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="37.0" toggleGroup="$tg" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Group>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+    <HBox id="HBox" alignment="CENTER" minWidth="-1.0" prefHeight="25.0" prefWidth="433.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <Button fx:id="okButton" mnemonicParsing="false" onMouseClicked="#clickOk" prefWidth="80.0" text="OK" />
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

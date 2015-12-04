@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="224.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gomokugui.FXMLDocumentGameEndsController">
+  <children>
+      <VBox alignment="TOP_CENTER" prefHeight="183.0" prefWidth="321.0" spacing="30.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="156.0" prefWidth="321.0" spacing="15.0">
+               <children>
+                  <Label fx:id="winLoseLabel" />
+               </children>
+               <VBox.margin>
+                  <Insets top="28.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+    <HBox id="HBox" alignment="CENTER" minWidth="-1.0" prefHeight="25.0" prefWidth="321.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+        <Button fx:id="okButton" mnemonicParsing="false" onMouseClicked="#clickOk" prefWidth="80.0" text="OK" textAlignment="CENTER" />
+         </children>
+    </HBox>
+  </children>
+</AnchorPane>
