@@ -139,7 +139,6 @@ public class Game {
             }
             else{
                 // valid move
-                turn = (turn + 1) % playerList.size();
                 return 0;
             }
         }
@@ -147,6 +146,10 @@ public class Game {
             //rejected, invalid move
             return -1;
         }
+    }
+    
+    public void nextTurn(){
+         turn = (turn + 1) % playerList.size();
     }
     
     public boolean isFinished(int symbolId, int i, int j){

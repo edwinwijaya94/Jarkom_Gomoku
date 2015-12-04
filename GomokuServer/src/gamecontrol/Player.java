@@ -101,11 +101,16 @@ public class Player implements Runnable {
                         if(ret == -1){
                             sendMessage("INVALID MOVE, re-enter coordinate");
                         } else{
-                            Main.moved = true;
+                            for (int index = 0; index < game.playerList.size(); index++) {
+                                game.playerList.get(index).sendMessage(game.toStringBoard());
+                            }
+                            game.nextTurn();
                         }
                     }
                     else{
                         // Opponent's turn
+                        //sendMessage("Opponent's turn");
+                        
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);

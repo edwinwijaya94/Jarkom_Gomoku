@@ -52,9 +52,7 @@ public class Main {
             Thread.sleep(50);
             if(moved){
                 moved = false;
-                for (int i = 0; i < playerList.size(); i++) {
-                    playerList.get(i).sendMessage(game.toStringBoard());
-                }
+                
             }
         }
         
