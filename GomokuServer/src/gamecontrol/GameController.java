@@ -34,10 +34,10 @@ public class GameController {
     }
     
     /* METHOD */
-    public void addRoom(Player creator){
-        Room newRoom = new Room(creator);
-        roomList.add(newRoom);
-    }
+//    public void addRoom(Player creator){
+//        Room newRoom = new Room(creator);
+//        roomList.add(newRoom);
+//    }
     
     public void removeRoom(int id){
         int i=0;
