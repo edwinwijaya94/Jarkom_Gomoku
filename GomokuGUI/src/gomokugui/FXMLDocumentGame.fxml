@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gomokugui.FXMLDocumentGameController">
+   <center>
+      <GridPane fx:id="gridPane" gridLinesVisible="true" prefHeight="540.0" prefWidth="540.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="label0" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="label1" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label fx:id="label2" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label fx:id="label3" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label fx:id="label4" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Label fx:id="label5" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+            <Label fx:id="label6" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            <Label fx:id="label7" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+            <Label fx:id="label8" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+            <Label fx:id="label9" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="0" />
+            <Label fx:id="label10" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="0" />
+            <Label fx:id="label11" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="0" />
+            <Label fx:id="label12" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="0" />
+            <Label fx:id="label13" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="0" />
+            <Label fx:id="label14" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="0" />
+            <Label fx:id="label15" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="0" />
+            <Label fx:id="label16" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="0" />
+            <Label fx:id="label17" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="0" />
+            <Label fx:id="label18" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="0" />
+            <Label fx:id="label19" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="0" />
+            <Label fx:id="label20" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="label21" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="label22" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="label23" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="label24" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label fx:id="label25" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label fx:id="label26" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label fx:id="label27" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Label fx:id="label28" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Label fx:id="label29" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Label fx:id="label30" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Label fx:id="label31" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+            <Label fx:id="label32" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+            <Label fx:id="label33" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+            <Label fx:id="label34" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+            <Label fx:id="label35" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="1" />
+            <Label fx:id="label36" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="1" />
+            <Label fx:id="label37" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="1" />
+            <Label fx:id="label38" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="1" />
+            <Label fx:id="label39" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="1" />
+            <Label fx:id="label40" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="label41" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="label42" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="label43" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label fx:id="label44" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label fx:id="label45" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Label fx:id="label46" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Label fx:id="label47" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Label fx:id="label48" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Label fx:id="label49" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Label fx:id="label50" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+            <Label fx:id="label51" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+            <Label fx:id="label52" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="2" />
+            <Label fx:id="label53" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="2" />
+            <Label fx:id="label54" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="2" />
+            <Label fx:id="label55" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="2" />
+            <Label fx:id="label56" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="2" />
+            <Label fx:id="label57" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="2" />
+            <Label fx:id="label58" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="2" />
+            <Label fx:id="label59" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="2" />
+            <Label fx:id="label60" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="label61" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="label62" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="label63" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="label64" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label fx:id="label65" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Label fx:id="label66" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Label fx:id="label67" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Label fx:id="label68" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Label fx:id="label69" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <Label fx:id="label70" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+            <Label fx:id="label71" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="3" />
+            <Label fx:id="label72" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="3" />
+            <Label fx:id="label73" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="3" />
+            <Label fx:id="label74" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="3" />
+            <Label fx:id="label75" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="3" />
+            <Label fx:id="label76" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="3" />
+            <Label fx:id="label77" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="3" />
+            <Label fx:id="label78" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="3" />
+            <Label fx:id="label79" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="3" />
+            <Label fx:id="label80" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label fx:id="label81" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="label82" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label fx:id="label83" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label fx:id="label84" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label fx:id="label85" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label fx:id="label86" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Label fx:id="label87" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Label fx:id="label88" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <Label fx:id="label89" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <Label fx:id="label90" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+            <Label fx:id="label91" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="4" />
+            <Label fx:id="label92" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></Label>
+            <Label fx:id="label93" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="4" />
+            <Label fx:id="label94" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="4" />
+            <Label fx:id="label95" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="4" />
+            <Label fx:id="label96" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="4" />
+            <Label fx:id="label97" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="4" />
+            <Label fx:id="label98" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="4" />
+            <Label fx:id="label99" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="4" />
+            <Label fx:id="label100" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label fx:id="label101" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="label102" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label fx:id="label103" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label fx:id="label104" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label fx:id="label105" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Label fx:id="label106" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Label fx:id="label107" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Label fx:id="label108" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+            <Label fx:id="label109" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+            <Label fx:id="label110" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+            <Label fx:id="label111" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="5" />
+            <Label fx:id="label112" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="5" />
+            <Label fx:id="label113" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="5" />
+            <Label fx:id="label114" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="5" />
+            <Label fx:id="label115" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="5" />
+            <Label fx:id="label116" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="5" />
+            <Label fx:id="label117" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="5" />
+            <Label fx:id="label118" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="5" />
+            <Label fx:id="label119" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="5" />
+            <Label fx:id="label120" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Label fx:id="label121" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="label122" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label fx:id="label123" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label fx:id="label124" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Label fx:id="label125" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Label fx:id="label126" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Label fx:id="label127" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <Label fx:id="label128" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+            <Label fx:id="label129" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+            <Label fx:id="label130" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="6" />
+            <Label fx:id="label131" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="6" />
+            <Label fx:id="label132" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="6" />
+            <Label fx:id="label133" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="6" />
+            <Label fx:id="label134" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="6" />
+            <Label fx:id="label135" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="6" />
+            <Label fx:id="label136" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="6" />
+            <Label fx:id="label137" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="6" />
+            <Label fx:id="label138" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="6" />
+            <Label fx:id="label139" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="6" />
+            <Label fx:id="label140" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Label fx:id="label141" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label fx:id="label142" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label fx:id="label143" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Label fx:id="label144" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <Label fx:id="label145" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Label fx:id="label146" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <Label fx:id="label147" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <Label fx:id="label148" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+            <Label fx:id="label149" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+            <Label fx:id="label150" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+            <Label fx:id="label151" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="7" />
+            <Label fx:id="label152" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="7" />
+            <Label fx:id="label153" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="7" />
+            <Label fx:id="label154" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="7" />
+            <Label fx:id="label155" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="7" />
+            <Label fx:id="label156" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="7" />
+            <Label fx:id="label157" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="7" />
+            <Label fx:id="label158" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="7" />
+            <Label fx:id="label159" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="7" />
+            <Label fx:id="label160" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <Label fx:id="label161" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label fx:id="label162" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label fx:id="label163" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Label fx:id="label164" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Label fx:id="label165" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <Label fx:id="label166" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+            <Label fx:id="label167" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+            <Label fx:id="label168" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+            <Label fx:id="label169" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+            <Label fx:id="label170" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+            <Label fx:id="label171" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="8" />
+            <Label fx:id="label172" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="8" />
+            <Label fx:id="label173" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="8" />
+            <Label fx:id="label174" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="8" />
+            <Label fx:id="label175" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="8" />
+            <Label fx:id="label176" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="8" />
+            <Label fx:id="label177" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="8" />
+            <Label fx:id="label178" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="8" />
+            <Label fx:id="label179" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="8" />
+            <Label fx:id="label180" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+            <Label fx:id="label181" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label fx:id="label182" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <Label fx:id="label183" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Label fx:id="label184" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <Label fx:id="label185" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+            <Label fx:id="label186" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+            <Label fx:id="label187" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+            <Label fx:id="label188" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+            <Label fx:id="label189" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+            <Label fx:id="label190" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+            <Label fx:id="label191" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="9" />
+            <Label fx:id="label192" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="9" />
+            <Label fx:id="label193" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="9" />
+            <Label fx:id="label194" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="9" />
+            <Label fx:id="label195" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="9" />
+            <Label fx:id="label196" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="9" />
+            <Label fx:id="label197" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="9" />
+            <Label fx:id="label198" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="9" />
+            <Label fx:id="label199" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="9" />
+            <Label fx:id="label200" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+            <Label fx:id="label201" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label fx:id="label202" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <Label fx:id="label203" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Label fx:id="label204" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <Label fx:id="label205" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+            <Label fx:id="label206" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+            <Label fx:id="label207" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+            <Label fx:id="label208" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+            <Label fx:id="label209" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+            <Label fx:id="label210" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+            <Label fx:id="label211" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="10" />
+            <Label fx:id="label212" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="10" />
+            <Label fx:id="label213" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="10" />
+            <Label fx:id="label214" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="10" />
+            <Label fx:id="label215" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="10" />
+            <Label fx:id="label216" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="10" />
+            <Label fx:id="label217" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="10" />
+            <Label fx:id="label218" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="10" />
+            <Label fx:id="label219" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="10" />
+            <Label fx:id="label220" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+            <Label fx:id="label221" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label fx:id="label222" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label fx:id="label223" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <Label fx:id="label224" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+            <Label fx:id="label225" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+            <Label fx:id="label226" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+            <Label fx:id="label227" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="11" />
+            <Label fx:id="label228" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="11" />
+            <Label fx:id="label229" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="11" />
+            <Label fx:id="label230" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="11" />
+            <Label fx:id="label231" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="11" />
+            <Label fx:id="label232" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="11" />
+            <Label fx:id="label233" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="11" />
+            <Label fx:id="label234" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="11" />
+            <Label fx:id="label235" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="11" />
+            <Label fx:id="label236" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="11" />
+            <Label fx:id="label237" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="11" />
+            <Label fx:id="label238" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="11" />
+            <Label fx:id="label239" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="11" />
+            <Label fx:id="label240" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+            <Label fx:id="label241" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label fx:id="label242" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Label fx:id="label243" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+            <Label fx:id="label244" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+            <Label fx:id="label245" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+            <Label fx:id="label246" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+            <Label fx:id="label247" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+            <Label fx:id="label248" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="12" />
+            <Label fx:id="label249" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="12" />
+            <Label fx:id="label250" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="12" />
+            <Label fx:id="label251" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="12" />
+            <Label fx:id="label252" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="12" />
+            <Label fx:id="label253" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="12" />
+            <Label fx:id="label254" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="12" />
+            <Label fx:id="label255" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="12" />
+            <Label fx:id="label256" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="12" />
+            <Label fx:id="label257" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="12" />
+            <Label fx:id="label258" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="12" />
+            <Label fx:id="label259" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="12" />
+            <Label fx:id="label260" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+            <Label fx:id="label261" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <Label fx:id="label262" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+            <Label fx:id="label263" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+            <Label fx:id="label264" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+            <Label fx:id="label265" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="13" />
+            <Label fx:id="label266" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="13" />
+            <Label fx:id="label267" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="13" />
+            <Label fx:id="label268" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="13" />
+            <Label fx:id="label269" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="13" />
+            <Label fx:id="label270" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="13" />
+            <Label fx:id="label271" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="13" />
+            <Label fx:id="label272" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="13" />
+            <Label fx:id="label273" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="13" />
+            <Label fx:id="label274" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="13" />
+            <Label fx:id="label275" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="13" />
+            <Label fx:id="label276" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="13" />
+            <Label fx:id="label277" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="13" />
+            <Label fx:id="label278" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="13" />
+            <Label fx:id="label279" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="13" />
+            <Label fx:id="label280" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+            <Label fx:id="label281" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Label fx:id="label282" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <Label fx:id="label283" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+            <Label fx:id="label284" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="14" />
+            <Label fx:id="label285" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="14" />
+            <Label fx:id="label286" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="14" />
+            <Label fx:id="label287" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+            <Label fx:id="label288" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="14" />
+            <Label fx:id="label289" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="14" />
+            <Label fx:id="label290" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="14" />
+            <Label fx:id="label291" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="14" />
+            <Label fx:id="label292" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="14" />
+            <Label fx:id="label293" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="14" />
+            <Label fx:id="label294" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="14" />
+            <Label fx:id="label295" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="14" />
+            <Label fx:id="label296" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="14" />
+            <Label fx:id="label297" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="14" />
+            <Label fx:id="label298" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="14" />
+            <Label fx:id="label299" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="14" />
+            <Label fx:id="label300" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="15" />
+            <Label fx:id="label301" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <Label fx:id="label302" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Label fx:id="label303" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="15" />
+            <Label fx:id="label304" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="15" />
+            <Label fx:id="label305" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="15" />
+            <Label fx:id="label306" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="15" />
+            <Label fx:id="label307" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="15" />
+            <Label fx:id="label308" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="15" />
+            <Label fx:id="label309" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="15" />
+            <Label fx:id="label310" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="15" />
+            <Label fx:id="label311" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="15" />
+            <Label fx:id="label312" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="15" />
+            <Label fx:id="label313" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="15" />
+            <Label fx:id="label314" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="15" />
+            <Label fx:id="label315" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="15" />
+            <Label fx:id="label316" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="15" />
+            <Label fx:id="label317" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="15" />
+            <Label fx:id="label318" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="15" />
+            <Label fx:id="label319" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="15" />
+            <Label fx:id="label320" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="16" />
+            <Label fx:id="label321" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <Label fx:id="label322" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+            <Label fx:id="label323" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+            <Label fx:id="label324" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="16" />
+            <Label fx:id="label325" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="16" />
+            <Label fx:id="label326" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="16" />
+            <Label fx:id="label327" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="16" />
+            <Label fx:id="label328" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="16" />
+            <Label fx:id="label329" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="16" />
+            <Label fx:id="label330" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="16" />
+            <Label fx:id="label331" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="16" />
+            <Label fx:id="label332" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="16" />
+            <Label fx:id="label333" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="16" />
+            <Label fx:id="label334" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="16" />
+            <Label fx:id="label335" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="16" />
+            <Label fx:id="label336" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="16" />
+            <Label fx:id="label337" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="16" />
+            <Label fx:id="label338" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="16" />
+            <Label fx:id="label339" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="16" />
+            <Label fx:id="label340" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="17" />
+            <Label fx:id="label341" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <Label fx:id="label342" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="17" />
+            <Label fx:id="label343" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="17" />
+            <Label fx:id="label344" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="17" />
+            <Label fx:id="label345" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="17" />
+            <Label fx:id="label346" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="17" />
+            <Label fx:id="label347" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="17" />
+            <Label fx:id="label348" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="17" />
+            <Label fx:id="label349" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="17" />
+            <Label fx:id="label350" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="17" />
+            <Label fx:id="label351" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="17" />
+            <Label fx:id="label352" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="17" />
+            <Label fx:id="label353" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="17" />
+            <Label fx:id="label354" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="17" />
+            <Label fx:id="label355" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="17" />
+            <Label fx:id="label356" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="17" />
+            <Label fx:id="label357" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="17" />
+            <Label fx:id="label358" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="17" />
+            <Label fx:id="label359" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="17" />
+            <Label fx:id="label360" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="18" />
+            <Label fx:id="label361" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+            <Label fx:id="label362" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="18" />
+            <Label fx:id="label363" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="18" />
+            <Label fx:id="label364" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="18" />
+            <Label fx:id="label365" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="18" />
+            <Label fx:id="label366" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="18" />
+            <Label fx:id="label367" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="18" />
+            <Label fx:id="label368" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="18" />
+            <Label fx:id="label369" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="18" />
+            <Label fx:id="label370" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="18" />
+            <Label fx:id="label371" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="18" />
+            <Label fx:id="label372" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="18" />
+            <Label fx:id="label373" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="18" />
+            <Label fx:id="label374" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="18" />
+            <Label fx:id="label375" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="18" />
+            <Label fx:id="label376" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="18" />
+            <Label fx:id="label377" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="18" />
+            <Label fx:id="label378" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="18" />
+            <Label fx:id="label379" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="18" />
+            <Label fx:id="label380" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="0" GridPane.rowIndex="19" />
+            <Label fx:id="label381" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+            <Label fx:id="label382" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="2" GridPane.rowIndex="19" />
+            <Label fx:id="label383" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="3" GridPane.rowIndex="19" />
+            <Label fx:id="label384" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="4" GridPane.rowIndex="19" />
+            <Label fx:id="label385" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="5" GridPane.rowIndex="19" />
+            <Label fx:id="label386" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="6" GridPane.rowIndex="19" />
+            <Label fx:id="label387" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="7" GridPane.rowIndex="19" />
+            <Label fx:id="label388" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="8" GridPane.rowIndex="19" />
+            <Label fx:id="label389" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="9" GridPane.rowIndex="19" />
+            <Label fx:id="label390" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="10" GridPane.rowIndex="19" />
+            <Label fx:id="label391" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="11" GridPane.rowIndex="19" />
+            <Label fx:id="label392" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="12" GridPane.rowIndex="19" />
+            <Label fx:id="label393" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="13" GridPane.rowIndex="19" />
+            <Label fx:id="label394" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="14" GridPane.rowIndex="19" />
+            <Label fx:id="label395" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="15" GridPane.rowIndex="19" />
+            <Label fx:id="label396" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="16" GridPane.rowIndex="19" />
+            <Label fx:id="label397" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="17" GridPane.rowIndex="19" />
+            <Label fx:id="label398" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="18" GridPane.rowIndex="19" />
+            <Label fx:id="label399" onMouseClicked="#handleClick" prefHeight="27.0" prefWidth="27.0" GridPane.columnIndex="19" GridPane.rowIndex="19" />
+         </children>
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="532.0" prefWidth="226.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="roomName">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <SplitPane fx:id="splitPane1" dividerPositions="0.7455357142857143" prefHeight="53.0" prefWidth="226.0" visible="false">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="namePlayer1" layoutX="20.0" layoutY="16.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="51.0">
+                     <children>
+                        <Label fx:id="iconPlayer1" layoutX="11.0" layoutY="11.0" prefHeight="27.0" prefWidth="27.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+              </items>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+            </SplitPane>
+            <SplitPane fx:id="splitPane2" dividerPositions="0.7455357142857143" layoutX="20.0" layoutY="40.0" prefHeight="53.0" prefWidth="226.0" visible="false">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="namePlayer2" layoutX="20.0" layoutY="16.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="51.0">
+                     <children>
+                        <Label fx:id="iconPlayer2" layoutX="11.0" layoutY="11.0" prefHeight="27.0" prefWidth="27.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+               </items>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+            </SplitPane>
+            <SplitPane fx:id="splitPane3" dividerPositions="0.7455357142857143" layoutX="10.0" layoutY="103.0" prefHeight="53.0" prefWidth="226.0" visible="false">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="namePlayer3" layoutX="20.0" layoutY="16.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="51.0">
+                     <children>
+                        <Label fx:id="iconPlayer3" layoutX="11.0" layoutY="11.0" prefHeight="27.0" prefWidth="27.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+               </items>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+            </SplitPane>
+            <SplitPane fx:id="splitPane4" dividerPositions="0.7455357142857143" layoutX="10.0" layoutY="166.0" prefHeight="53.0" prefWidth="226.0" visible="false">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="namePlayer4" layoutX="20.0" layoutY="16.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="51.0">
+                     <children>
+                        <Label fx:id="iconPlayer4" layoutX="11.0" layoutY="11.0" prefHeight="27.0" prefWidth="27.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+               </items>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+            </SplitPane>
+            <SplitPane fx:id="splitPane5" dividerPositions="0.7455357142857143" layoutX="10.0" layoutY="229.0" prefHeight="53.0" prefWidth="226.0" visible="false">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="namePlayer5" layoutX="20.0" layoutY="16.0" text="Label">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="51.0">
+                     <children>
+                        <Label fx:id="iconPlayer5" layoutX="11.0" layoutY="11.0" prefHeight="27.0" prefWidth="27.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+               </items>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+            </SplitPane>
+         </children></VBox>
+   </right>
+   <top>
+      <HBox alignment="CENTER" prefHeight="42.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="42.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="18.0" prefWidth="1000.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <VBox prefHeight="524.0" prefWidth="234.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
