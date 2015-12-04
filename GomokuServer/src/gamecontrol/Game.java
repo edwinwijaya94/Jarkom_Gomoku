@@ -23,6 +23,7 @@ public class Game {
     int[][] board; // 0-base indexed, started from (0,0)
     ArrayList<Player> playerList;
     String winner;
+    int turn;
     
     /*INFO FOR ACCESS WINNING COORDINATE*/
     /*Coordinate access uses matrix access type (i,j) ->(row,column)
@@ -41,7 +42,14 @@ public class Game {
     }
 
     /* GETTER */
+    public int getTurn() {
+        return turn;
+    }
 
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+    
     public int getStatus(){
         return this.status;
     }
@@ -109,19 +117,19 @@ public class Game {
     public void start(ArrayList<Player> playerList){
         this.setStatus(1);
         this.resetBoard();
-        
+        this.turn = 0;
     }
     
     public void resetBoard(){
         for(int i=0; i<BOARD_SIZE; i++){
             for(int j=0; j<BOARD_SIZE; j++)
-                this.board[i][j] = 0;
+                this.board[i][j] = -1;
         }
     }
     
     public int move(int playerId, int i, int j){
         Player player = this.getPlayer(playerId);
-        if(this.getBoard()[i][j] == 0){
+        if(this.getBoard()[i][j] == -1){
             //process
             this.getBoard()[i][j] = player.getSymbolId();
             if(this.isFinished(player.getSymbolId(), i, j) || this.isAborted()){
@@ -131,6 +139,7 @@ public class Game {
             }
             else{
                 // valid move
+                turn = (turn + 1) % playerList.size();
                 return 0;
             }
         }
@@ -177,13 +186,16 @@ public class Game {
         this.status = 2;
     }
     
-    public void printBoard(){
+    public String toStringBoard(){
+        String output = "";
         for(int i=0; i<10;i++){
             for(int j=0; j<10; j++){
-                System.out.print(board[i][j] + " ");
+                output += board[i][j] + " ";
             }
-            System.out.println();
+            output += "\n";
         }
+        
+        return output;
     }
     
     public boolean checkByDirection(int symbolId, int i, int j, int dx1, int dy1, int dx2, int dy2){
