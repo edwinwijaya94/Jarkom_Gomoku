@@ -45,11 +45,13 @@ public class FXMLDocumentStartController implements Initializable{
     @FXML
     private ImageView logoStart;
     
-    static Socket socket;
-    static DataInputStream in;
-    static DataOutputStream out;
+    public static Socket socket;
+    public static DataInputStream in;
+    public static DataOutputStream out;
     @FXML
     private TextField ipAddress;
+    
+    private Stage stage;
     
     private class GameStarted implements Runnable {
 
@@ -126,7 +128,7 @@ public class FXMLDocumentStartController implements Initializable{
             out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF(nicknameField.getText());
             
-            Stage stage = new Stage(); 
+            stage = new Stage(); 
             Parent root;
             Stage curstage=(Stage) nicknameButton.getScene().getWindow();
             curstage.hide();
@@ -177,16 +179,20 @@ public class FXMLDocumentStartController implements Initializable{
                 @Override
                 public void handle(WorkerStateEvent t) {
                     try {
-                        Stage stage = new Stage(); 
+                        Stage curstage = stage;
+                        stage = new Stage(); 
                         Parent root;
-                        Stage curstage=(Stage) nicknameButton.getScene().getWindow();
+                        // Stage curstage=(Stage) nicknameButton.getScene().getWindow();
                         curstage.hide();
                         root = FXMLLoader.load(getClass().getResource("FXMLDocumentGame.fxml"));
 
                         stage.setTitle("Playing");
                         stage.initModality(Modality.WINDOW_MODAL);
                         stage.initOwner((Stage) nicknameField.getScene().getWindow());
-
+                        
+                        FXMLDocumentGameController.socket = socket;
+                        FXMLDocumentGameController.out = out;
+                        
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();

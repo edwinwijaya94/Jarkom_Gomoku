@@ -93,10 +93,12 @@ public class Player implements Runnable {
             }
             else {
                 try {
-                    if(id == game.getTurn()){
+                     if(id == game.getTurn()){
                         sendMessage("Your Move");
                         int i = Integer.parseInt(in.readUTF());
                         int j = Integer.parseInt(in.readUTF());
+                        
+                        System.out.println(i +" " +j);
                         int ret = game.move(id, i, j);
                         if(ret == -1){
                             sendMessage("INVALID MOVE, re-enter coordinate");

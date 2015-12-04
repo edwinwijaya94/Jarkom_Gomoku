@@ -5,10 +5,20 @@
  */
 package gomokugui;
 
+import static gomokugui.FXMLDocumentRoomController.str;
+import static gomokugui.FXMLDocumentStartController.in;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
@@ -22,7 +32,10 @@ import javafx.scene.layout.GridPane;
  * @author Vicko
  */
 public class FXMLDocumentGameController implements Initializable {
-
+    
+    public static Socket socket;
+    public static DataOutputStream out;
+    
     @FXML
     private GridPane gridPane;
     @FXML
@@ -858,21 +871,96 @@ public class FXMLDocumentGameController implements Initializable {
     @FXML
     private Label iconPlayer5;
 
+    private boolean isTurn = false;
+    private boolean isBoard = false;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        Task task = new Task<Void>() {
+            @Override
+            public Void call() {
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Masuk task " + str.get());
+                while(!str.get().equals("Game Ended")){
+                    try {
+                        str.set(in.readUTF());
+                        System.out.println(str.get());
+                        System.out.println("length="+str.get().length());
+                        if(str.get().length() > 50){
+                            isBoard = true;
+                            updateBoard(str.get());
+                        }
+                        if(str.get().equals("Your Move")){
+                            System.out.println("Set isTurn = true");
+                            isTurn = true;
+                        }
+                        System.out.println(str.get());
+                    } catch (IOException ex) {
+                        Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
+                System.out.println("keluar");
+
+                return null;
+            }
+        };
+        new Thread(task).start();
     }    
 
     @FXML
-    private void handleClick(MouseEvent event) {
+    private void handleClick(MouseEvent event) throws IOException {
+        //System.out.println("isTurn = " + isTurn);
+        if(!isTurn)
+            return;
+        
         Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
         ImageView iv = new ImageView(image);
         //iv.setFitWidth(27);
         //iv.setFitHeight(27);
         ((Label)event.getSource()).setGraphic(iv);
+        // System.out.println("Lalallaa");
+        //System.out.println(((Label) event.getSource()).getId());
+        Integer squareId = Integer.parseInt(((Label) event.getSource()).getId().substring(5));
+        int i = squareId / 20;
+        int j = squareId % 20;
+        System.out.println(i +" " +j);
+        
+        //send coordinate
+        out = new DataOutputStream(socket.getOutputStream());
+        out.writeUTF(Integer.toString(i));
+        out.writeUTF(Integer.toString(j));
+        
+        isTurn = false;
     }
     
+    public void updateBoard(String board){
+        for(int i=0; i<board.length(); i++){
+            int i2 = i / 20;
+            int j2 = i % 20;
+            Image image = new Image(getClass().getResourceAsStream("img/small/crop/"+board.substring(i,i)+".png"));
+            ImageView iv = new ImageView(image);
+            ((Label)this.getNodeByRowColumnIndex(i2,j2 , gridPane)).setGraphic(iv);
+        }
+    }
+    
+    public Node getNodeByRowColumnIndex(final int row,final int column,GridPane gridPane) {
+        Node result = null;
+        ObservableList<Node> childrens = gridPane.getChildren();
+        for(Node node : childrens) {
+            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+                result = node;
+                break;
+            }
+        }
+        return result;
+    }
 }
