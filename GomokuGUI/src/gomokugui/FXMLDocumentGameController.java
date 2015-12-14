@@ -931,7 +931,7 @@ public class FXMLDocumentGameController implements Initializable {
                 for(Node node : childrens) {
                     labelMatrix[GridPane.getRowIndex(node)][GridPane.getColumnIndex(node)] = (Label)node;
                 }
-                
+                         
                 return null;
             }
         };
@@ -944,11 +944,11 @@ public class FXMLDocumentGameController implements Initializable {
         if(!isTurn)
             return;
         
-        Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
-        ImageView iv = new ImageView(image);
+        //Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
+        //ImageView iv = new ImageView(image);
         //iv.setFitWidth(27);
         //iv.setFitHeight(27);
-        ((Label)event.getSource()).setGraphic(iv);
+        //((Label)event.getSource()).setGraphic(iv);
         // System.out.println("Lalallaa");
         //System.out.println(((Label) event.getSource()).getId());
         Integer squareId = Integer.parseInt(((Label) event.getSource()).getId().substring(5));
@@ -978,9 +978,13 @@ public class FXMLDocumentGameController implements Initializable {
         }*/
         
         String[] updateString = board.split(" ");
+        int symbolId = Integer.parseInt(updateString[0]);
         int i2 = Integer.parseInt(updateString[1]);
         int j2 = Integer.parseInt(updateString[2]);
-        Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
+        String imglocation = "img/small/crop/" + (symbolId+1) + ".png";
+        //System.out.println(imglocation);
+        //Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
+        Image image = new Image(getClass().getResourceAsStream(imglocation));
         ImageView iv = new ImageView(image);
         //System.out.println("row : " + i2);
         //System.out.println("column : " + j2);
