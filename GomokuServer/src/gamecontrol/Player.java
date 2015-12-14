@@ -103,8 +103,10 @@ public class Player implements Runnable {
                         if(ret == -1){
                             sendMessage("INVALID MOVE, re-enter coordinate");
                         } else{
+                            String updatedCoordinate = id + " " + i + " " + j;
+                            //System.out.println("update:" + updatedCoordinate);
                             for (int index = 0; index < game.playerList.size(); index++) {
-                                game.playerList.get(index).sendMessage(game.toStringBoard());
+                                game.playerList.get(index).sendMessage(updatedCoordinate);
                             }
                             game.nextTurn();
                         }

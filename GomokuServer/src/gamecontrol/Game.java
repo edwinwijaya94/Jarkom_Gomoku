@@ -191,8 +191,8 @@ public class Game {
     
     public String toStringBoard(){
         String output = "";
-        for(int i=0; i<10;i++){
-            for(int j=0; j<10; j++){
+        for(int i=0; i<BOARD_SIZE;i++){
+            for(int j=0; j<BOARD_SIZE; j++){
                 output += board[i][j] + " ";
             }
             output += "\n";
