@@ -875,6 +875,8 @@ public class FXMLDocumentGameController implements Initializable {
     private boolean isTurn = false;
     private boolean isBoard = false;
     
+    private Label[][] labelMatrix = new Label[20][20];
+    
     /**
      * Initializes the controller class.
      */
@@ -895,7 +897,7 @@ public class FXMLDocumentGameController implements Initializable {
                         str.set(in.readUTF());
                         System.out.println(str.get());
                         System.out.println("length="+str.get().length());
-                        if(str.get().length() <= 5){
+                        if(str.get().length() <= 8){
                             isBoard = true;
                             updateBoard(str.get());
                         }
@@ -915,6 +917,25 @@ public class FXMLDocumentGameController implements Initializable {
             }
         };
         new Thread(task).start();
+        
+        Task task2 = new Task<Void>() {
+            @Override
+            public Void call() {
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                
+                ObservableList<Node> childrens = gridPane.getChildren();
+                for(Node node : childrens) {
+                    labelMatrix[GridPane.getRowIndex(node)][GridPane.getColumnIndex(node)] = (Label)node;
+                }
+                
+                return null;
+            }
+        };
+        new Thread(task2).start();
     }    
 
     @FXML
@@ -931,14 +952,18 @@ public class FXMLDocumentGameController implements Initializable {
         // System.out.println("Lalallaa");
         //System.out.println(((Label) event.getSource()).getId());
         Integer squareId = Integer.parseInt(((Label) event.getSource()).getId().substring(5));
+        System.out.println(GridPane.getRowIndex(((Label)event.getSource())) + " ");
+        System.out.println(GridPane.getColumnIndex(((Label)event.getSource())));
         int i = squareId / 20;
         int j = squareId % 20;
-        System.out.println(i +" " +j);
+        //System.out.println(i +" " +j);
         
         //send coordinate
         out = new DataOutputStream(socket.getOutputStream());
-        out.writeUTF(Integer.toString(i));
-        out.writeUTF(Integer.toString(j));
+        //out.writeUTF(Integer.toString(i));
+        //out.writeUTF(Integer.toString(j));
+        out.writeUTF(Integer.toString(GridPane.getRowIndex(((Label)event.getSource()))));
+        out.writeUTF(Integer.toString(GridPane.getColumnIndex(((Label)event.getSource()))));
         
         isTurn = false;
     }
@@ -957,16 +982,17 @@ public class FXMLDocumentGameController implements Initializable {
         int j2 = Integer.parseInt(updateString[2]);
         Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
         ImageView iv = new ImageView(image);
-        System.out.println("row : " + i2);
-        System.out.println("column : " + j2);
+        //System.out.println("row : " + i2);
+        //System.out.println("column : " + j2);
         Platform.runLater(new Runnable() {
           @Override public void run() {
-            ((Label)getNodeByRowColumnIndex(i2,j2 , gridPane)).setGraphic(iv);
+            //((Label)getNodeByRowColumnIndex(i2,j2 , gridPane)).setGraphic(iv);
+            labelMatrix[i2][j2].setGraphic(iv);
           }  
         });
     }
     
-    public Node getNodeByRowColumnIndex(final int row,final int column,GridPane gridPane) {
+    /*public Node getNodeByRowColumnIndex(final int row,final int column,GridPane gridPane) {
         Node result = null;
         ObservableList<Node> childrens = gridPane.getChildren();
         for(Node node : childrens) {
@@ -975,7 +1001,7 @@ public class FXMLDocumentGameController implements Initializable {
                 break;
             }
         }
-        System.out.println(result.getId());
+        //System.out.println(result.getId());
         return result;
-    }
+    }*/
 }
