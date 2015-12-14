@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -894,7 +895,7 @@ public class FXMLDocumentGameController implements Initializable {
                         str.set(in.readUTF());
                         System.out.println(str.get());
                         System.out.println("length="+str.get().length());
-                        if(str.get().length() > 50){
+                        if(str.get().length() <= 5){
                             isBoard = true;
                             updateBoard(str.get());
                         }
@@ -902,7 +903,7 @@ public class FXMLDocumentGameController implements Initializable {
                             System.out.println("Set isTurn = true");
                             isTurn = true;
                         }
-                        System.out.println(str.get());
+                        //System.out.println(str.get());
                     } catch (IOException ex) {
                         Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -943,24 +944,38 @@ public class FXMLDocumentGameController implements Initializable {
     }
     
     public void updateBoard(String board){
-        for(int i=0; i<board.length(); i++){
+        /*for(int i=0; i<board.length(); i++){
             int i2 = i / 20;
             int j2 = i % 20;
             Image image = new Image(getClass().getResourceAsStream("img/small/crop/"+board.substring(i,i)+".png"));
             ImageView iv = new ImageView(image);
             ((Label)this.getNodeByRowColumnIndex(i2,j2 , gridPane)).setGraphic(iv);
-        }
+        }*/
+        
+        String[] updateString = board.split(" ");
+        int i2 = Integer.parseInt(updateString[1]);
+        int j2 = Integer.parseInt(updateString[2]);
+        Image image = new Image(getClass().getResourceAsStream("img/small/crop/1.png"));
+        ImageView iv = new ImageView(image);
+        System.out.println("row : " + i2);
+        System.out.println("column : " + j2);
+        Platform.runLater(new Runnable() {
+          @Override public void run() {
+            ((Label)getNodeByRowColumnIndex(i2,j2 , gridPane)).setGraphic(iv);
+          }  
+        });
     }
     
     public Node getNodeByRowColumnIndex(final int row,final int column,GridPane gridPane) {
         Node result = null;
         ObservableList<Node> childrens = gridPane.getChildren();
         for(Node node : childrens) {
-            if(gridPane.getRowIndex(node) == row && gridPane.getColumnIndex(node) == column) {
+            if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
                 result = node;
                 break;
             }
         }
+        System.out.println(result.getId());
         return result;
     }
 }
