@@ -107,6 +107,23 @@ public class Player implements Runnable {
                     curRoom.addPlayer(this);
                     try {
                         sendMessage("Entered room " + curRoom.getId());
+                        
+                        // send player list to all players
+                        for(int j=0; j<curRoom.playerList.size(); j++){
+                            sendMessage("Player List");
+                            sendMessage(curRoom.playerList.get(j).getId() + " " + curRoom.playerList.get(j).getNickname());
+                        }
+                    } catch (IOException ex) {
+                        Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else if(splitted[0].equals("\\refresh")){
+                    try {
+                        // send player list to all players
+                        for(int j=0; j<curRoom.playerList.size(); j++){
+                            sendMessage("Player List");
+                            sendMessage(curRoom.playerList.get(j).getId() + " " + curRoom.playerList.get(j).getNickname());
+                        }
                     } catch (IOException ex) {
                         Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
                     }
