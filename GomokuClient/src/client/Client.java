@@ -36,9 +36,13 @@ public class Client {
         System.out.println(in.readUTF());
         
         while(!serverMessage.equals("Game Started")){
+            System.out.println("Enter message:");
+            message = sc.nextLine();
+            out.writeUTF(message);
             serverMessage = in.readUTF();
+            System.out.println(serverMessage);
         }
-        System.out.println(serverMessage);
+        out.writeUTF("\\dummy");
         
         while(!serverMessage.equals("Game Ended")){
             serverMessage = in.readUTF();

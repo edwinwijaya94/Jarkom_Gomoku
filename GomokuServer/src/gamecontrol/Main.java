@@ -16,11 +16,16 @@ import java.util.ArrayList;
  */
 public class Main {    
     
-    private static int curRoomId = 0;
+    public static int curRoomId = 0;
     public static ArrayList<Room> roomList = new ArrayList<Room>();
     public static void addRoom(){
         roomList.add(new Room(curRoomId));
         new Thread(roomList.get(curRoomId++)).start();
+    }
+    public static void getRoomList(){
+        for(int i=0; i<roomList.size(); i++){
+            System.out.println("Room " + roomList.get(i).getId());
+        }
     }
     
     public static void main(String args[]) throws IOException, InterruptedException{
