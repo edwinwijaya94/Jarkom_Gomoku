@@ -163,7 +163,7 @@ public class Player implements Runnable {
             }
             else {
                 try {
-                    if(id == game.getTurn()){
+                    if(id == game.getTurn() && game.getStatus() != 2){
                         int i,j;
                         sendMessage("Your Move");
                         String message = in.readUTF();
@@ -185,9 +185,9 @@ public class Player implements Runnable {
                             game.nextTurn();
                         }
                     }
-                    else{
-                        // Opponent's turn
-                        //sendMessage("Opponent's turn");
+                    else if(game.getStatus()==2) {
+                        // Game Ended
+                        gameStarted = false;
                         
                     }
                 } catch (IOException ex) {

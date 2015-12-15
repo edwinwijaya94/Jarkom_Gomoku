@@ -135,9 +135,18 @@ public class Room implements Runnable {
                 //send 5 coordinates
                 for(int j=0; j<game.getWinningCoordinate().size(); j++)
                     playerList.get(i).sendMessage(game.getWinningCoordinate().get(j).getKey() + " " + game.getWinningCoordinate().get(j).getValue());
+                
+                playerList.get(i).gameStarted = false;
             } catch (IOException ex) {
                 // Do nothing
                 // Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        for(int i=0; i<Main.roomList.size(); i++){
+            if(Main.roomList.get(i).getId() == i){
+                Main.roomList.remove(i);
+                break;
             }
         }
         
