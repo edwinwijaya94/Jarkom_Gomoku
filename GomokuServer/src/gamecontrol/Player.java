@@ -16,11 +16,15 @@ import java.util.logging.Logger;
  *
  * @author Edwin
  */
+
+// room.getListPlayers().get(i).curRoom == this;
+
 public class Player implements Runnable {
     /* ATTRIBUTE */
     int id;
     String nickname;
     int symbolId;
+    Room curRoom;
     Game game = null;
     boolean gameStarted = false;
     
@@ -90,20 +94,40 @@ public class Player implements Runnable {
             
             if(!gameStarted){
                 // Ignored
+                String message = "";
+                try {
+                    message = in.readUTF();
+                } catch (IOException ex) {
+                    Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                String[] splitted = message.split("\\s+");
+                if(splitted[0].equals("\\enter")){
+                    curRoom = Main.roomList.get(Integer.parseInt(splitted[1]));
+                    curRoom.addPlayer(this);
+                }
+                else if (splitted[0].equals("\\create")){
+                    Main.addRoom();
+                    System.out.println("Created Room " + (Main.roomList.size() - 1));
+                }
             }
             else {
                 try {
-                     if(id == game.getTurn()){
+                    if(id == game.getTurn()){
+                        int i,j;
                         sendMessage("Your Move");
-                        int i = Integer.parseInt(in.readUTF());
-                        int j = Integer.parseInt(in.readUTF());
-                        
-                        System.out.println(i +" " +j);
+                        String message = in.readUTF();
+                        if(message.equals("\\dummy"))
+                            i = Integer.parseInt(in.readUTF());
+                        else
+                            i = Integer.parseInt(message);
+                            
+                        j = Integer.parseInt(in.readUTF());
                         int ret = game.move(id, i, j);
                         if(ret == -1){
                             sendMessage("INVALID MOVE, re-enter coordinate");
                         } else{
-                            String updatedCoordinate = id + " " + i + " " + j;
+			    String updatedCoordinate = id + " " + i + " " + j;
                             //System.out.println("update:" + updatedCoordinate);
                             for (int index = 0; index < game.playerList.size(); index++) {
                                 game.playerList.get(index).sendMessage(updatedCoordinate);
