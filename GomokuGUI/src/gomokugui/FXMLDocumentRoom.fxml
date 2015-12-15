@@ -58,13 +58,113 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <TableView fx:id="playersList" prefHeight="416.0" prefWidth="540.0">
-              <columns>
-                <TableColumn prefWidth="58.0" text="No." />
-                <TableColumn prefWidth="349.6666259765625" text="Player Name" />
-                  <TableColumn prefWidth="133.3333740234375" text="Character" />
-              </columns>
-            </TableView>
+            <GridPane fx:id="gridPane">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="58.0" minWidth="58.0" prefWidth="58.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.6666259765625" minWidth="349.6666259765625" prefWidth="349.6666259765625" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="playersNo" maxHeight="78.0" minHeight="0.0" prefHeight="0.0" prefWidth="58.0">
+                     <columns>
+                        <TableColumn minWidth="27.0" prefWidth="58.0" text="No." />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="playersName" maxHeight="27.0" minHeight="0.0" prefHeight="0.0" prefWidth="350.0" GridPane.columnIndex="1">
+                     <columns>
+                        <TableColumn prefWidth="349.6666259765625" text="Player Name" />
+                     </columns>
+                  </TableView>
+                  <TableView fx:id="playersChar" maxHeight="27.0" maxWidth="134.0" minHeight="0.0" minWidth="133.3333740234375" prefHeight="0.0" prefWidth="134.0" GridPane.columnIndex="2">
+                     <columns>
+                        <TableColumn maxWidth="133.3333740234375" minWidth="133.3333740234375" prefWidth="133.3333740234375" text="Character" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="no1" alignment="CENTER" prefHeight="27.0" prefWidth="58.0" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="no2" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="27.0" prefWidth="58.0" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="no3" alignment="CENTER" layoutX="10.0" layoutY="62.0" prefHeight="27.0" prefWidth="58.0" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="no4" alignment="CENTER" layoutX="10.0" layoutY="89.0" prefHeight="27.0" prefWidth="58.0" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="no5" alignment="CENTER" layoutX="10.0" layoutY="116.0" prefHeight="27.0" prefWidth="58.0" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="3.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="name1" layoutX="10.0" layoutY="35.0" prefHeight="27.0" prefWidth="349.6666259765625" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="name2" layoutX="68.0" layoutY="35.0" prefHeight="27.0" prefWidth="349.6666259765625" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="name3" layoutX="68.0" layoutY="62.0" prefHeight="27.0" prefWidth="349.6666259765625" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="name4" layoutX="68.0" layoutY="89.0" prefHeight="27.0" prefWidth="349.6666259765625" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="name5" layoutX="68.0" layoutY="116.0" prefHeight="27.0" prefWidth="349.6666259765625" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="char1" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="27.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="char2" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="35.0" prefHeight="27.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="char3" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="62.0" prefHeight="27.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="char4" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="89.0" prefHeight="27.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="char5" alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="116.0" prefHeight="27.0" prefWidth="135.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </GridPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="85.0" prefWidth="200.0" spacing="110.0">
                <children>
                   <Button fx:id="exitRoomButton" mnemonicParsing="false" onMouseClicked="#exitRoom" text="Exit Room">
@@ -83,6 +183,9 @@
                      </font>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets top="254.0" />
+               </VBox.margin>
             </HBox>
          </children></VBox>
    </center>
