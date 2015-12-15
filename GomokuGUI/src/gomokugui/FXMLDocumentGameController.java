@@ -7,6 +7,8 @@ package gomokugui;
 
 import static gomokugui.FXMLDocumentRoomController.str;
 import static gomokugui.FXMLDocumentStartController.in;
+import static gomokugui.FXMLDocumentStartController.out;
+import static gomokugui.FXMLDocumentStartController.socket;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -33,9 +35,6 @@ import javafx.scene.layout.GridPane;
  * @author Vicko
  */
 public class FXMLDocumentGameController implements Initializable {
-    
-    public static Socket socket;
-    public static DataOutputStream out;
     
     @FXML
     private GridPane gridPane;
