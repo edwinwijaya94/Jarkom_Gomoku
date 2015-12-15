@@ -104,8 +104,8 @@ public class Room implements Runnable {
                 playerList.get(i).sendMessage("Game Started");
                 // send player list to all players
                 for(int j=0; j<playerList.size(); j++){
-                playerList.get(i).sendMessage("Player List");
-                playerList.get(i).sendMessage(playerList.get(j).getId() + " " + playerList.get(j).getNickname());
+                    playerList.get(i).sendMessage("Player List");
+                    playerList.get(i).sendMessage(playerList.get(j).getId() + " " + playerList.get(j).getNickname());
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
