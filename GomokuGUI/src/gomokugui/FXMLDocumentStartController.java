@@ -190,9 +190,6 @@ public class FXMLDocumentStartController implements Initializable{
                         stage.initModality(Modality.WINDOW_MODAL);
                         stage.initOwner((Stage) nicknameField.getScene().getWindow());
                         
-                        FXMLDocumentGameController.socket = socket;
-                        FXMLDocumentGameController.out = out;
-                        
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                         stage.show();

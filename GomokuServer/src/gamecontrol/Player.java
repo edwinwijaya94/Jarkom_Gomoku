@@ -105,10 +105,36 @@ public class Player implements Runnable {
                 if(splitted[0].equals("\\enter")){
                     curRoom = Main.roomList.get(Integer.parseInt(splitted[1]));
                     curRoom.addPlayer(this);
+                    try {
+                        sendMessage("Entered room " + curRoom.getId());
+                    } catch (IOException ex) {
+                        Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 else if (splitted[0].equals("\\create")){
                     Main.addRoom();
-                    System.out.println("Created Room " + (Main.roomList.size() - 1));
+                    try {
+                        sendMessage("Created Room " + (Main.curRoomId));
+                    } catch (IOException ex) {
+                        Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else if (splitted[0].equals("\\start")){
+                    if(curRoom != null){
+                        curRoom.gameStarted = true;
+                    }
+                }
+                else if (splitted[0].equals("\\getRoomList")){
+                    // getRoomList
+                    message = "";
+                    for(int i=0; i<Main.roomList.size(); i++){
+                        message += "Room " + Main.roomList.get(i).getId() + "\n";
+                    }
+                    try {
+                        sendMessage(message);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
             else {
