@@ -129,7 +129,8 @@ public class Room implements Runnable {
                 else
                     playerList.get(i).sendMessage(game.getWinner() + " is the winner !");
             } catch (IOException ex) {
-                Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
+                // Do nothing
+                // Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

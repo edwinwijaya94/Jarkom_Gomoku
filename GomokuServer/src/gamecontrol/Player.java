@@ -120,8 +120,15 @@ public class Player implements Runnable {
                     }
                 }
                 else if (splitted[0].equals("\\start")){
-                    if(curRoom != null){
+                    if(curRoom != null && curRoom.getPlayerList().size() >= 3){
                         curRoom.gameStarted = true;
+                    }
+                    else{
+                        try {
+                            sendMessage("Fail starting game");
+                        } catch (IOException ex) {
+                            Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
                 }
                 else if (splitted[0].equals("\\getRoomList")){
@@ -167,6 +174,8 @@ public class Player implements Runnable {
                         
                     }
                 } catch (IOException ex) {
+                    if(gameStarted)
+                        game.nextTurn();
                     Logger.getLogger(Player.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
