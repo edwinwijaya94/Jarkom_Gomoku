@@ -26,11 +26,9 @@ public class Game {
     int turn;
     
     /*INFO FOR ACCESS WINNING COORDINATE*/
-    /*Coordinate access uses matrix access type (i,j) ->(row,column)
-    /* First pair is 1st bound coordinate
-    /* Second pair is 2nd bound coordinate
-    */
-    Pair<Pair<Integer,Integer>,Pair<Integer,Integer>> winningCoordinate;
+    /*Coordinate access uses matrix access type (i,j) ->(row,column)*/
+    
+    ArrayList<Pair<Integer,Integer>> winningCoordinate;
     
     /* CONSTRUCTOR */
     public Game(){
@@ -80,7 +78,7 @@ public class Game {
             return false;
     }
     
-    public Pair<Pair<Integer,Integer>,Pair<Integer,Integer>> getWinningCoordinate(){
+    public ArrayList<Pair<Integer, Integer>>getWinningCoordinate(){
         return this.winningCoordinate;
     }
     
@@ -94,12 +92,8 @@ public class Game {
         this.winner = winner;
     }
     
-    public void setWinningCoordinate(int i1, int j1, int i2, int j2){
-        Integer a = i1;
-        Integer b = j1;
-        Integer c = i2;
-        Integer d = j2;
-        this.winningCoordinate = new Pair<>(new Pair<>(a,b),new Pair<>(c,d));
+    public void setWinningCoordinate(ArrayList<Pair<Integer,Integer>> winning){
+        this.winningCoordinate = winning;
     }
     
     /* METHOD */
@@ -259,7 +253,33 @@ public class Game {
 //        System.out.println("i2="+i2+" j2="+j2);
         if(streak == 5){
             found = true;
-            this.setWinningCoordinate(i1, j1, i2, j2);
+            ArrayList<Pair<Integer, Integer>> winning = new ArrayList<>(5);
+            winning.add(new Pair(i1,j1));
+            //set _di
+            int _di = i2 - i1; 
+            if(_di > 0)
+                _di = 1;
+            else if(_di <0)
+                _di = -1;
+            else
+                _di = 0;
+            
+            //set _dj
+            int _dj = j2 - j1;
+            if(_dj > 0)
+                _di = 1;
+            else if(_dj <0)
+                _dj = -1;
+            else
+                _dj = 0;
+            
+            int a = i1; int b = j1;
+            for(int k=0; k<3; k++){
+                a += _di; b += _dj; 
+                winning.add(new Pair(a,b));
+            }
+            winning.add(new Pair(i2,j2));
+            this.setWinningCoordinate(winning);
         }
         return found;
     }
