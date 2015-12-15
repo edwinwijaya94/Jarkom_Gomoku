@@ -105,7 +105,7 @@ public class Room implements Runnable {
                 for(int j=0; j<playerList.size(); j++){
                 playerList.get(i).sendMessage("Player List");
                 playerList.get(i).sendMessage(playerList.get(j).getId() + " " + playerList.get(j).getNickname());
-            }
+                }
             } catch (IOException ex) {
                 Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -122,11 +122,18 @@ public class Room implements Runnable {
         for(int i = 0; i< playerList.size(); i++){
             try {
                 playerList.get(i).sendMessage("Game Ended");
+                
                 // send winner's nickname
                 if(playerList.get(i).getNickname() == game.getWinner())
                     playerList.get(i).sendMessage("You are the winner !");
                 else
                     playerList.get(i).sendMessage(game.getWinner() + " is the winner !");
+                
+                // send winning coordinates
+                System.out.println(game.getWinningCoordinate().toString());
+                //send 5 coordinates
+                for(int j=0; j<game.getWinningCoordinate().size(); j++)
+                    playerList.get(i).sendMessage(game.getWinningCoordinate().get(j).getKey() + " " + game.getWinningCoordinate().get(j).getValue());
             } catch (IOException ex) {
                 Logger.getLogger(Room.class.getName()).log(Level.SEVERE, null, ex);
             }
