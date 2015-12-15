@@ -5,11 +5,17 @@
  */
 package gomokugui;
 
+//import static gomokugui.FXMLDocumentRoomController.str;
+import static gomokugui.FXMLDocumentStartController.in;
+import static gomokugui.FXMLDocumentStartController.out;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -35,16 +41,18 @@ import javafx.stage.Stage;
  * @author Vicko
  */
 public class FXMLDocumentRoomsController implements Initializable {
+    
+    public static StringProperty str = new SimpleStringProperty();
 
     public static class Room {
         private SimpleIntegerProperty roomNo;
         private SimpleStringProperty roomName;
-        private SimpleIntegerProperty players;
+        //private SimpleIntegerProperty players;
         
-        private Room(int roomNo, String roomName, int players) {
+        private Room(int roomNo, String roomName) {
             this.roomNo = new SimpleIntegerProperty(roomNo);
             this.roomName = new SimpleStringProperty(roomName);
-            this.players = new SimpleIntegerProperty(players);
+            //this.players = new SimpleIntegerProperty(players);
         }
         
         public int getRoomNo() {
@@ -55,9 +63,9 @@ public class FXMLDocumentRoomsController implements Initializable {
             return roomName.get();
         }
         
-        public int getPlayers() {
-            return players.get();
-        }
+//        public int getPlayers() {
+//            return players.get();
+//        }
         
         public void setRoomNo(int roomNo) {
             this.roomNo.set(roomNo);
@@ -67,9 +75,9 @@ public class FXMLDocumentRoomsController implements Initializable {
             this.roomName.set(roomName);
         }
         
-        public void setPlayers(int players) {
-            this.players.set(players);
-        }
+//        public void setPlayers(int players) {
+//            this.players.set(players);
+//        }
     }
     
     @FXML
@@ -80,8 +88,7 @@ public class FXMLDocumentRoomsController implements Initializable {
     private Button createRoomButton;
     @FXML
     private Button joinRoomButton;
-    @FXML
-    private Label roomTitle;
+    public static String roomName;
     
     private ObservableList<Room> data = FXCollections.observableArrayList();
 
@@ -90,38 +97,67 @@ public class FXMLDocumentRoomsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-         Task task2 = new Task<Void>() {
-            @Override
-            public Void call() {
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                
-                ObservableList<TableColumn<Room, ?>> columns = (ObservableList<TableColumn<Room, ?>>) roomsList.getColumns();
-                for (TableColumn column : columns) {
-                    //System.out.println(column.getText());
-                    if (column.getText().equals("No.")) {
-                        column.setCellValueFactory(new PropertyValueFactory<Room, String>("roomNo"));
-                        column.setStyle("-fx-alignment: CENTER;");
-                    } else if (column.getText().equals("Room Name")) {
-                        column.setCellValueFactory(new PropertyValueFactory<Room, String>("roomName"));                        
-                    } else if (column.getText().equals("Players")) {
-                        column.setCellValueFactory(new PropertyValueFactory<Room, String>("players"));                        
-                        column.setStyle("-fx-alignment: CENTER;");
+        try {
+            //try {
+            // TODO
+            Task task2 = new Task<Void>() {
+                @Override
+                public Void call() {
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
+                    
+                    ObservableList<TableColumn<Room, ?>> columns = (ObservableList<TableColumn<Room, ?>>) roomsList.getColumns();
+                    for (TableColumn column : columns) {
+                        //System.out.println(column.getText());
+                        if (column.getText().equals("No.")) {
+                            column.setCellValueFactory(new PropertyValueFactory<Room, String>("roomNo"));
+                            column.setStyle("-fx-alignment: CENTER;");
+                        } else if (column.getText().equals("Room Name")) {
+                            column.setCellValueFactory(new PropertyValueFactory<Room, String>("roomName"));
+                        } //else if (column.getText().equals("Players")) {
+//                            column.setCellValueFactory(new PropertyValueFactory<Room, String>("players"));
+//                            column.setStyle("-fx-alignment: CENTER;");
+//                        }
+                    }
+                    
+                    roomsList.setItems(data);
+                    
+                    //data.add(new Room(1, "a", 0));
+                    
+                    return null;
                 }
-                
-                roomsList.setItems(data);
-                
-                //data.add(new Room(1, "a", 0));
-                         
-                return null;
+            };
+            new Thread(task2).start();
+            
+            out.writeUTF("\\getRoomList");
+            
+            str.set(in.readUTF());
+            System.out.println(str.get());
+            String[] roomList = str.get().split("\n");
+            int k = 1;
+            for (String room : roomList) {
+                System.out.println("room name : " + room);
+                data.add(new Room(k++, room));
             }
-        };
-        new Thread(task2).start();
+            //} catch (IOException ex) {
+            //Logger.getLogger(FXMLDocumentRoomsController.class.getName()).log(Level.SEVERE, null, ex);
+            //}
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLDocumentRoomsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        roomsList.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
+            //Check whether item is selected and set value of selected item to Label
+            if (roomsList.getSelectionModel().getSelectedItem() != null) {
+                //lblTool.setText(newValue.getTool());
+                roomName = newValue.getRoomName();
+            }
+        });
+
+        
     }    
 
     @FXML
@@ -154,25 +190,27 @@ public class FXMLDocumentRoomsController implements Initializable {
 
     @FXML
     private void joinRoom(MouseEvent event) throws IOException {
-        Parent root;
-        Stage dialogStage = new Stage();
-        root = FXMLLoader.load(getClass().getResource("FXMLDocumentChooseChar.fxml"));
-        dialogStage.setTitle("Choose A Character");
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.initOwner((Stage) homeButton.getScene().getWindow());
-
-        Scene scene = new Scene(root);
-        dialogStage.setScene(scene);
-        dialogStage.show();
-        
-//        Stage stage; 
 //        Parent root;
-//        stage=(Stage) homeButton.getScene().getWindow();
-//        root = FXMLLoader.load(getClass().getResource("FXMLDocumentRoom.fxml"));
+//        Stage dialogStage = new Stage();
+//        root = FXMLLoader.load(getClass().getResource("FXMLDocumentChooseChar.fxml"));
+//        dialogStage.setTitle("Choose A Character");
+//        dialogStage.initModality(Modality.WINDOW_MODAL);
+//        dialogStage.initOwner((Stage) homeButton.getScene().getWindow());
 //
 //        Scene scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
+//        dialogStage.setScene(scene);
+//        dialogStage.show();
+        String[] splits = roomName.split(" ");
+        out.writeUTF("\\enter " + splits[1]);
+        
+        Stage stage; 
+        Parent root;
+        stage=(Stage) homeButton.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("FXMLDocumentRoom.fxml"));
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
 }

@@ -5,7 +5,7 @@
  */
 package gomokugui;
 
-import static gomokugui.FXMLDocumentRoomController.str;
+import static gomokugui.FXMLDocumentRoomsController.str;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -125,14 +125,20 @@ public class FXMLDocumentStartController implements Initializable{
         if (nicknameField.getText().length() > 0) {
             
             socket = new Socket(ipAddress.getText(), 7777);
+            try {
+                in = new DataInputStream(socket.getInputStream());
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF(nicknameField.getText());
+            System.out.println(in.readUTF());
             
             stage = new Stage(); 
             Parent root;
             Stage curstage=(Stage) nicknameButton.getScene().getWindow();
             curstage.hide();
-            root = FXMLLoader.load(getClass().getResource("FXMLDocumentRoom.fxml"));
+            root = FXMLLoader.load(getClass().getResource("FXMLDocumentRooms.fxml"));
 
             stage.setTitle("Create Room");
             stage.initModality(Modality.WINDOW_MODAL);
@@ -142,13 +148,9 @@ public class FXMLDocumentStartController implements Initializable{
             stage.setScene(scene);
             stage.show();
             
-            str.set("");
+            //str.set("");
             System.out.println("ROOM");
-            try {
-                in = new DataInputStream(socket.getInputStream());
-            } catch (IOException ex) {
-                Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
 //            GameStarted gameStarted = new GameStarted();
 //            new Thread(gameStarted).start();
             
@@ -161,14 +163,14 @@ public class FXMLDocumentStartController implements Initializable{
                         e.printStackTrace();
                     }
                     
-                    while(!str.get().equals("Game Started")){
+                    /*while(!str.get().equals("Game Started")){
                         try {
                             str.set(in.readUTF());
                             System.out.println(str.get());
                         } catch (IOException ex) {
                             Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    }
+                    }*/
                     System.out.println("keluar");
                     
                     return null;
@@ -178,27 +180,24 @@ public class FXMLDocumentStartController implements Initializable{
             task.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
                 @Override
                 public void handle(WorkerStateEvent t) {
-                    try {
-                        Stage curstage = stage;
-                        stage = new Stage(); 
-                        Parent root;
-                        // Stage curstage=(Stage) nicknameButton.getScene().getWindow();
-                        curstage.hide();
-                        root = FXMLLoader.load(getClass().getResource("FXMLDocumentGame.fxml"));
-
-                        stage.setTitle("Playing");
-                        stage.initModality(Modality.WINDOW_MODAL);
-                        stage.initOwner((Stage) nicknameField.getScene().getWindow());
-                        
-                        FXMLDocumentGameController.socket = socket;
-                        FXMLDocumentGameController.out = out;
-                        
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-                    } catch (IOException ex) {
-                        Logger.getLogger(FXMLDocumentStartController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+//                    try {
+//                        Stage curstage = stage;
+//                        stage = new Stage(); 
+//                        Parent root;
+//                        // Stage curstage=(Stage) nicknameButton.getScene().getWindow();
+//                        curstage.hide();
+//                        root = FXMLLoader.load(getClass().getResource("FXMLDocumentGame.fxml"));
+//
+//                        stage.setTitle("Playing");
+//                        stage.initModality(Modality.WINDOW_MODAL);
+//                        stage.initOwner((Stage) nicknameField.getScene().getWindow());
+//                        
+//                        Scene scene = new Scene(root);
+//                        stage.setScene(scene);
+//                        stage.show();
+//                    } catch (IOException ex) {
+//                        Logger.getLogger(FXMLDocumentStartController.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
                 }
             });
             new Thread(task).start();

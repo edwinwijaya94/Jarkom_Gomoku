@@ -5,6 +5,10 @@
  */
 package gomokugui;
 
+import static gomokugui.FXMLDocumentRoomsController.str;
+import static gomokugui.FXMLDocumentStartController.in;
+import static gomokugui.FXMLDocumentStartController.out;
+import static gomokugui.FXMLDocumentStartController.socket;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -58,7 +62,7 @@ public class FXMLDocumentRoomController implements Initializable {
     
     //private ObjectProperty<DataInputStream> dis = new SimpleObjectProperty<DataInputStream>(FXMLDocumentStartController.in);
     private String serverMessage;
-    public static StringProperty str = new SimpleStringProperty();
+//    public static StringProperty str = new SimpleStringProperty();
     @FXML
     private TableView<?> playersNo;
     @FXML
@@ -134,14 +138,13 @@ public class FXMLDocumentRoomController implements Initializable {
                       playersName.setPlaceholder(new Label(""));
                       playersChar.setPlaceholder(new Label(""));
                       gridPane.setGridLinesVisible(true);
+                      roomTitle.setText(FXMLDocumentRoomsController.roomName);
                     }  
                 });
                 
                 ObservableList<Node> childrens = gridPane.getChildren();
-                System.out.println(childrens.size());
                 for(Node node : childrens) {
                     if (GridPane.getColumnIndex(node) == null) {
-                        System.out.println("masuk");
                         if (GridPane.getRowIndex(node) != null) {
                             playersNumbers[GridPane.getRowIndex(node)-1] = (Label)node;
                         }
@@ -218,6 +221,8 @@ public class FXMLDocumentRoomController implements Initializable {
 
     @FXML
     private void startGame(MouseEvent event) throws IOException {
+        out.writeUTF("\\start");
+        
         Stage stage; 
         Parent root;
         stage=(Stage) startGameButton.getScene().getWindow();
