@@ -19,6 +19,7 @@ public class Room implements Runnable {
     /* ATTRIBUTE */
     int id;
     ArrayList<Player> playerList = new ArrayList<Player>();
+    public boolean gameStarted = false;
     Game game;
     
     /* CONSTRUCTOR */
@@ -80,7 +81,7 @@ public class Room implements Runnable {
     @Override
     public void run() {
         
-        while(getTotalPlayer() < 2){
+        while(!gameStarted){
             try {
                 Thread.sleep(50);
             } catch (InterruptedException ex) {
