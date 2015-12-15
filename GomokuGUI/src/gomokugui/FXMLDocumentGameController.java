@@ -5,8 +5,10 @@
  */
 package gomokugui;
 
-import static gomokugui.FXMLDocumentRoomController.str;
+import static gomokugui.FXMLDocumentRoomsController.str;
 import static gomokugui.FXMLDocumentStartController.in;
+import static gomokugui.FXMLDocumentStartController.out;
+import static gomokugui.FXMLDocumentStartController.socket;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -18,14 +20,19 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -33,9 +40,6 @@ import javafx.scene.layout.GridPane;
  * @author Vicko
  */
 public class FXMLDocumentGameController implements Initializable {
-    
-    public static Socket socket;
-    public static DataOutputStream out;
     
     @FXML
     private GridPane gridPane;
@@ -877,6 +881,12 @@ public class FXMLDocumentGameController implements Initializable {
     
     private Label[][] labelMatrix = new Label[20][20];
     
+    private Label[] playerNames = new Label[5];
+    private Label[] playerIcons = new Label[5];
+    
+    private boolean playerListFlag = false;
+    public static String message ;
+    
     /**
      * Initializes the controller class.
      */
@@ -885,32 +895,107 @@ public class FXMLDocumentGameController implements Initializable {
         // TODO
         Task task = new Task<Void>() {
             @Override
-            public Void call() {
+            public Void call() throws IOException {
                 try {
                     Thread.sleep(50);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("Masuk task " + str.get());
+                System.out.println("Masuk task " + FXMLDocumentRoomsController.roomName);
                 while(!str.get().equals("Game Ended")){
                     try {
                         str.set(in.readUTF());
                         System.out.println(str.get());
                         System.out.println("length="+str.get().length());
-                        if(str.get().length() <= 8){
-                            isBoard = true;
-                            updateBoard(str.get());
-                        }
-                        if(str.get().equals("Your Move")){
-                            System.out.println("Set isTurn = true");
-                            isTurn = true;
+                        if (!playerListFlag) {
+                            if(str.get().length() <= 8){
+                                isBoard = true;
+                                updateBoard(str.get());
+                            }
+                            if(str.get().equals("Your Move")){
+                                System.out.println("Set isTurn = true");
+                                isTurn = true;
+                            }
+                            if (str.get().equals("Player List")) {
+                                playerListFlag = true;
+                            }
+                        } else {
+                            String[] players = str.get().split(" ");
+                            int playerId = Integer.parseInt(players[0]);
+                            String playerNickname = players[1];
+                            
+                            System.out.println("id + name : " + playerId + playerNickname);
+                            Platform.runLater(new Runnable() {
+                                @Override public void run() {
+                                  //((Label)getNodeByRowColumnIndex(i2,j2 , gridPane)).setGraphic(iv);
+                                 // labelMatrix[i2][j2].setGraphic(iv);
+                                  String imglocation;
+                            Image image;
+                            ImageView iv;
+                                  switch(playerId) {
+                                case 0 : playerNames[playerId] = namePlayer1;
+                                         playerIcons[playerId] = iconPlayer1;
+                                         playerNames[playerId].setText(playerNickname);
+                                         imglocation = "img/small/crop/" + (playerId+1) + ".png";
+                                         image = new Image(getClass().getResourceAsStream(imglocation));
+                                         iv = new ImageView(image);
+                                         playerIcons[playerId].setGraphic(iv);
+                                         break;
+                                case 1 : playerNames[playerId] = namePlayer2;
+                                         playerIcons[playerId] = iconPlayer2;
+                                         playerNames[playerId].setText(playerNickname);
+                                         imglocation = "img/small/crop/" + (playerId+1) + ".png";
+                                         image = new Image(getClass().getResourceAsStream(imglocation));
+                                         iv = new ImageView(image);
+                                         playerIcons[playerId].setGraphic(iv);         
+                                         break;
+                                case 2 : playerNames[playerId] = namePlayer3;
+                                         playerIcons[playerId] = iconPlayer3;
+                                         playerNames[playerId].setText(playerNickname);
+                                         imglocation = "img/small/crop/" + (playerId+1) + ".png";
+                                         image = new Image(getClass().getResourceAsStream(imglocation));
+                                         iv = new ImageView(image);
+                                         playerIcons[playerId].setGraphic(iv);         
+                                         break;         
+                                case 3 : playerNames[playerId] = namePlayer4;
+                                         playerIcons[playerId] = iconPlayer4;
+                                         playerNames[playerId].setText(playerNickname);
+                                         imglocation = "img/small/crop/" + (playerId+1) + ".png";
+                                         image = new Image(getClass().getResourceAsStream(imglocation));
+                                         iv = new ImageView(image);
+                                         playerIcons[playerId].setGraphic(iv);         
+                                         break;  
+                                case 4 : playerNames[playerId] = namePlayer5;
+                                         playerIcons[playerId] = iconPlayer5;
+                                         playerNames[playerId].setText(playerNickname);
+                                         imglocation = "img/small/crop/" + (playerId+1) + ".png";
+                                         image = new Image(getClass().getResourceAsStream(imglocation));
+                                         iv = new ImageView(image);
+                                         playerIcons[playerId].setGraphic(iv);         
+                                         break;         
+                            }
+                                }  
+                              });
+                            
+                            
+                            playerListFlag = false;
                         }
                         //System.out.println(str.get());
                     } catch (IOException ex) {
                         Logger.getLogger(FXMLDocumentRoomController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-                
+                 Parent root;
+        Stage dialogStage = new Stage();
+        root = FXMLLoader.load(getClass().getResource("FXMLDocumentGameEnds.fxml"));
+        dialogStage.setTitle("Choose A Character");
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner((Stage) namePlayer1.getScene().getWindow());
+
+        Scene scene = new Scene(root);
+        dialogStage.setScene(scene);
+        dialogStage.show();
+        message = str.get();
                 System.out.println("keluar");
 
                 return null;
@@ -931,11 +1016,15 @@ public class FXMLDocumentGameController implements Initializable {
                 for(Node node : childrens) {
                     labelMatrix[GridPane.getRowIndex(node)][GridPane.getColumnIndex(node)] = (Label)node;
                 }
+                
+              
                          
                 return null;
             }
         };
         new Thread(task2).start();
+        
+        roomName.setText(FXMLDocumentRoomsController.roomName);
     }    
 
     @FXML
