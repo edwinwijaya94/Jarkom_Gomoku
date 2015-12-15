@@ -91,6 +91,7 @@ public class Room implements Runnable {
         // Initialize game
         for(int i = 0; i<playerList.size() ; i++){
             playerList.get(i).setId(i);
+            playerList.get(i).setSymbolId(i);
             game.addPlayer(playerList.get(i));
         }
         
